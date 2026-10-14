@@ -1,4 +1,6 @@
+import { readSessions } from '@/db/sessions';
 import { AiChatResponseV2, describeSharedProgramForAi } from '@/models/ai-models';
+import { attachCoachHistory, historyFromSessions } from '@/services/coach-history';
 import {
   addMessage,
   ChatMessage,
@@ -19,13 +21,14 @@ export function applyAiPlannerEffects(addEffect: AddEffectFn) {
     dispatch(setIsHydrated(true));
   });
 
-  addEffect(addMessage, async ({ payload: message }, { dispatch, extra: { aiChatService } }) => {
+  addEffect(addMessage, async ({ payload: message }, { dispatch, extra: { aiChatService, db } }) => {
     if (message.from === 'Agent') {
       return;
     }
     let wireMessage: string;
     if (message.type === 'messageResponse') {
-      wireMessage = message.message;
+      const { sessions, activeSessionId } = readSessions(db);
+      wireMessage = attachCoachHistory(message.message, historyFromSessions(sessions, activeSessionId));
     } else if (message.type === 'sharedProgram') {
       wireMessage = describeSharedProgramForAi(message.programName, message.blueprint);
     } else {
