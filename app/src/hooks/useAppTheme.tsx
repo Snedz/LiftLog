@@ -169,7 +169,7 @@ export const AppThemeProvider: React.FC<AppThemeProviderProps> = ({ children }) 
   // If the device is not compatible, it will return a theme based on the fallback source color (optional, default to #6750A4)
   const sourceColor = colorSchemeSeed === 'default' ? undefined : colorSchemeSeed;
   const { theme, updateTheme, resetTheme } = useMaterial3Theme({
-    fallbackSourceColor: '0x005500',
+    fallbackSourceColor: '0x27B07D',
     sourceColor,
   });
   let newTheme = theme;
