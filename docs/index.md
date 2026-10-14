@@ -36,6 +36,12 @@ work to find the docs relevant to your area, and update it whenever you add, rem
 - [RemoteBackup.md](./RemoteBackup.md) — the automatic remote backup: the app-side settings, the HTTPS
   requirement, and the contract a self-hosted backup endpoint must satisfy.
 
+## Mission Winning
+
+- [MW_AUDIT.md](./MW_AUDIT.md) — audit of this LiftLog fork as the Mission Winning base: layout of
+  `app/` and `backend/`, whether logging works with no server, how the AI planner is wired, and
+  the Android release and Expo web build results.
+
 ## Running it yourself
 
 - [SelfHosting.md](./SelfHosting.md) — quickstart for running your own backend: a copy-paste Docker
