@@ -1495,6 +1495,14 @@
     "name": "Kettlebell Figure 8",
     "instructions": "Place one kettlebell between your legs and take a wider than shoulder width stance. Bend over by pushing your butt out and keeping your back flat.\nPick up a kettlebell and pass it to your other hand between your legs. The receiving hand should reach from behind the legs. Go back and forth for several repetitions."
   },
+  "Kettlebell Halo": {
+    "name": "Kettlebell Halo",
+    "instructions": "Stand tall with your feet hip-width apart. Hold a kettlebell upside down by the horns, with the bell above your hands and close to your chest. Brace your abdominals and squeeze your glutes so your ribcage stays down. This is your starting position.\nKeeping your elbows close to your head, move the kettlebell up past one ear and around behind your head.\nContinue the circle past the opposite ear and back down to the starting position in front of your chest, letting the bell pass close to your body throughout.\nComplete the prescribed number of circles in one direction, then repeat the same number in the opposite direction.\nMove slowly and keep your head, hips and lower back still. If your lower back arches or the bell drifts far from your head, use a lighter weight."
+  },
+  "Kettlebell Halo with Overhead Extension": {
+    "name": "Kettlebell Halo with Overhead Extension",
+    "instructions": "Stand tall with your feet hip-width apart. Hold a kettlebell upside down by the horns, with the bell above your hands and close to your chest. Brace your abdominals and squeeze your glutes so your ribcage stays down. This is your starting position.\nKeeping your elbows close to your head, move the kettlebell up past one ear and around until it sits behind your head. Pause here.\nFrom this position, extend your elbows to press the kettlebell up and overhead until your arms are straight, keeping your upper arms alongside your head.\nBend your elbows to lower the kettlebell back to the pause position behind your head, under control.\nContinue the circle past the opposite ear and back down to the starting position in front of your chest to complete one repetition.\nAlternate the direction of the circle on each repetition. Keep your head, hips and lower back still throughout; if your lower back arches or you cannot reach the overhead position without leaning back, use a lighter weight or perform the halo and the extension as separate exercises."
+  },
   "Kettlebell Hang Clean": {
     "name": "Kettlebell Hang Clean",
     "instructions": "Place kettlebell between your feet. To get in the starting position, push your butt back and look straight ahead.\nClean kettlebell to your shoulder. Clean the kettlebell to your shoulders by extending through the legs and hips as you raise the kettlebell towards your shoulder. The wrist should rotate as you do so.\nLower kettlebell to a hanging position between your legs while keeping the hamstrings loaded. Keep your head up at all times."
@@ -1502,6 +1510,10 @@
   "Kettlebell One-Legged Deadlift": {
     "name": "Kettlebell One-Legged Deadlift",
     "instructions": "Hold a kettlebell by the handle in one hand. Stand on one leg, on the same side that you hold the kettlebell.\nKeeping that knee slightly bent, perform a stiff legged deadlift by bending at the hip, extending your free leg behind you for balance.\nContinue lowering the kettlebell until you are parallel to the ground, and then return to the upright position."
+  },
+  "Kettlebell Overhead Triceps Extension": {
+    "name": "Kettlebell Overhead Triceps Extension",
+    "instructions": "Stand with your feet hip-width apart, holding a kettlebell by the horns with both hands. Press it overhead until your arms are extended, with the bell hanging behind your hands.\nBrace your abdominals and keep your upper arms vertical and close to your head. This is your starting position.\nBend at the elbows to lower the kettlebell behind your head, going as far as your shoulder mobility allows without your elbows flaring outward.\nExtend your elbows to press the kettlebell back to the starting position, keeping your upper arms still throughout.\nKeep your ribcage down and avoid arching your lower back as you extend."
   },
   "Kettlebell Pass Between The Legs": {
     "name": "Kettlebell Pass Between The Legs",
@@ -2101,7 +2113,7 @@
   },
   "Pallof Press": {
     "name": "Pallof Press",
-    "instructions": "Connect a standard handle to a tower, and-if possible-position the cable to shoulder height. If not, a low pulley will suffice.\nWith your side to the cable, grab the handle with both hands and step away from the tower. You should be approximately arm's length away from the pulley, with the tension of the weight on the cable.\nWith your feet positioned hip-width apart and knees slightly bent, hold the cable to the middle of your chest. This will be your starting position.\nPress the cable away from your chest, fully extending both arms. You core should be tight and engaged.\nHold the repetition for several seconds before returning to the starting position.\nAt the conclusion of the set, repeat facing the other direction."
+    "instructions": "Connect a standard handle to a tower, and—if possible—position the cable to shoulder height. If not, a low pulley will suffice.\nWith your side to the cable, grab the handle with both hands and step away from the tower. You should be approximately arm's length away from the pulley, with the tension of the weight on the cable.\nWith your feet positioned hip-width apart and knees slightly bent, hold the cable to the middle of your chest. This will be your starting position.\nPress the cable away from your chest, fully extending both arms. You core should be tight and engaged.\nHold the repetition for several seconds before returning to the starting position.\nAt the conclusion of the set, repeat facing the other direction."
   },
   "Pallof Press With Rotation": {
     "name": "Pallof Press With Rotation",
@@ -2753,7 +2765,7 @@
   },
   "Skating": {
     "name": "Skating",
-    "instructions": "Roller skating is a fun activity which can be effective in improving cardiorespiratory fitness and muscular endurance. It requires relatively good balance and coordination. It is necessary to learn the basics of skating including turning and stopping and to wear protective gear to avoid possible injury.\nYou can skate at a comfortable pace for 30 minutes straight. If you want a cardio challenge, do interval skating - speed skate two minutes of every five minutes, using the remaining three minutes to recover. A 150 lb person will typically burn about 175 calories in 30 minutes skating at a comfortable pace, similar to brisk walking."
+    "instructions": "Roller skating is a fun activity which can be effective in improving cardiorespiratory fitness and muscular endurance. It requires relatively good balance and coordination. It is necessary to learn the basics of skating including turning and stopping and to wear protective gear to avoid possible injury.\nYou can skate at a comfortable pace for 30 minutes straight. If you want a cardio challenge, do interval skating — speed skate two minutes of every five minutes, using the remaining three minutes to recover. A 150 lb person will typically burn about 175 calories in 30 minutes skating at a comfortable pace, similar to brisk walking."
   },
   "Sled Drag - Harness": {
     "name": "Sled Drag - Harness",

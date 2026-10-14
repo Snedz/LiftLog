@@ -4,6 +4,11 @@ The base catalog lives one level up in `assets/exercises.json`: the language-neu
 built-in exercise - its **English name** (the stable id) plus fixed-vocabulary metadata (muscles,
 category, equipment, …, localized via Tolgee keys). It holds no free-text translated fields.
 
+That list is [free-exercise-db](https://github.com/yuhonas/free-exercise-db) (Unlicense). Refresh it,
+and copy a matching [workout-guide](https://github.com/bryllim/workout-guide) frame into
+`assets/exercise-illustrations/`, with `node scripts/import-exercise-library.mjs`. The frames ship
+inside the app. Artwork is CC BY-SA 4.0; the workout-guide package code is MIT. See `NOTICE`.
+
 Each `<locale>.json` here is a read-only overlay onto that base, keyed by the English name, holding the
 translated free-text fields:
 

@@ -14,3 +14,19 @@ https://github.com/LiamMorrow/LiftLog
 
 LiftLog is licensed under the GNU Affero General Public License, version 3.
 The same licence covers this fork. This NOTICE does not change the license.
+
+Exercise list
+The built-in exercise list is from free-exercise-db by yuhonas and contributors.
+https://github.com/yuhonas/free-exercise-db
+That dataset is dedicated to the public domain under the Unlicense.
+https://unlicense.org/
+
+Exercise illustrations
+Where an exercise name matches, the app bundles one frame from workout-guide by Bryl Lim.
+https://github.com/bryllim/workout-guide
+https://bryllim.com
+The workout-guide package code is under the MIT License.
+The illustration files are licensed under Creative Commons Attribution-ShareAlike 4.0.
+https://creativecommons.org/licenses/by-sa/4.0/
+Some first-pose artwork is adapted from Everkinetic, also CC BY-SA 4.0.
+https://github.com/everkinetic/data

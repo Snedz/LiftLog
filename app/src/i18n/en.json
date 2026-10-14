@@ -102,6 +102,7 @@
   "date.type_in.button": "Type in date",
   "deletion.item_deleted.message": "{name} deleted",
   "exercise.add.button": "Add exercise",
+  "exercise.illustration.credit": "Illustration by Bryl Lim, CC BY-SA 4.0",
   "exercise.add.title": "Add exercise",
   "exercise.add_hint.body": "Add an exercise by tapping the more button in the top right",
   "exercise.all_sets.label": "All sets",
