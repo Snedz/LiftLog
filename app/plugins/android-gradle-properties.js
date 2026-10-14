@@ -1,7 +1,8 @@
 const { withGradleProperties } = require('@expo/config-plugins');
 
 const GRADLE_PROPERTIES = {
-  'org.gradle.jvmargs': '-Xmx6g -XX:MaxMetaspaceSize=1g',
+  // R8 runs out of metaspace at 1g on this app. 1536m is the budget a release build completes with.
+  'org.gradle.jvmargs': '-Xmx4g -XX:MaxMetaspaceSize=1536m',
   'org.gradle.caching': 'true',
   'android.enableMinifyInReleaseBuilds': 'true',
   'android.enableShrinkResourcesInReleaseBuilds': 'true',

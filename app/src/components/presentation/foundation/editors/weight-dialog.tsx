@@ -2,7 +2,7 @@ import { spacing } from '@/hooks/useAppTheme';
 import { localeFormatBigNumber, localeParseBigNumber } from '@/utils/locale-bignumber';
 import { T, useTranslate } from '@tolgee/react';
 import BigNumber from 'bignumber.js';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import { View } from 'react-native';
 import IconButton from '@/components/presentation/foundation/icon-button';
 import Button from '@/components/presentation/foundation/button';
@@ -11,6 +11,7 @@ import { shortFormatWeightUnit, Weight, WeightUnit } from '@/models/weight';
 import { usePreferredWeightUnit } from '@/hooks/usePreferredWeightUnit';
 import { KeyboardAvoidingView } from 'react-native-keyboard-controller';
 import { useDerivedState } from '@/hooks/useDerivedState';
+import { defaultBarWeight, formatPlatesPerSide, platesPerSide } from '@/models/plate-calculator';
 
 type WeightDialogProps = {
   open: boolean;
@@ -43,6 +44,18 @@ export default function WeightDialog(props: WeightDialogProps) {
   );
 
   const nonZeroIncrement = props.increment.isZero() ? new BigNumber('2.5') : props.increment;
+  const [platesOpen, setPlatesOpen] = useState(false);
+  const [barText, setBarText] = useDerivedState(editorWeightUnit, (unit) => String(defaultBarWeight(unit)));
+  const barWeight = Number(barText);
+  const plateLoad =
+    platesOpen && editorWeightValue && editorWeightUnit !== 'nil' && editorWeightValue.isGreaterThanOrEqualTo(0)
+      ? platesPerSide(
+          editorWeightValue.toNumber(),
+          editorWeightUnit,
+          Number.isFinite(barWeight) ? barWeight : defaultBarWeight(editorWeightUnit),
+        )
+      : undefined;
+  const plateSummary = plateLoad ? formatPlatesPerSide(plateLoad.platesPerSide, editorWeightUnit) : '';
 
   const incrementWeight = () => {
     if (editorWeightValue === undefined) {
@@ -159,6 +172,33 @@ export default function WeightDialog(props: WeightDialogProps) {
                   <IconButton icon={'minus'} mode="outlined" testID="decrement-weight" onPress={decrementWeight} />
                   <IconButton icon={'plus'} mode="outlined" testID="increment-weight" onPress={incrementWeight} />
                 </View>
+                {editorWeightUnit !== 'nil' && editorWeightValue?.isGreaterThanOrEqualTo(0) ? (
+                  <Button mode="text" onPress={() => setPlatesOpen((open) => !open)} testID="plate-calculator">
+                    <T keyName="plates.calculator.button" />
+                  </Button>
+                ) : null}
+                {plateLoad ? (
+                  <View style={{ gap: spacing[1] }}>
+                    <TextInput
+                      label={t('plates.bar.label')}
+                      value={barText}
+                      onChangeText={setBarText}
+                      inputMode="decimal"
+                      keyboardType="decimal-pad"
+                      testID="plate-bar-weight"
+                    />
+                    <Text>
+                      {plateSummary ? t('plates.per_side', { plates: plateSummary }) : <T keyName="plates.bar_only" />}
+                    </Text>
+                    {!plateLoad.achievable ? (
+                      <Text>
+                        {t('plates.short', {
+                          remainder: `${plateLoad.remainder}${shortFormatWeightUnit(editorWeightUnit)}`,
+                        })}
+                      </Text>
+                    ) : null}
+                  </View>
+                ) : null}
                 {props.children}
               </View>
             </Dialog.Content>

@@ -1,4 +1,5 @@
 import PotentialSetCounter from '@/components/presentation/workout/weighted/potential-set-counter';
+import { DoubleProgressionHint } from '@/components/presentation/workout/weighted/double-progression-hint';
 import { spacing } from '@/hooks/useAppTheme';
 import { RecordedWeightedExercise } from '@/models/session-models';
 import { useState } from 'react';
@@ -68,6 +69,9 @@ export default function WeightedExercise(props: WeightedExerciseProps) {
           />
         ))}
       </View>
+      {!props.isReadonly ? (
+        <DoubleProgressionHint recordedExercise={recordedExercise} previous={props.previousLineageExercise} />
+      ) : null}
     </ExerciseSection>
   );
 }

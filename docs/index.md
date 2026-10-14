@@ -41,6 +41,8 @@ work to find the docs relevant to your area, and update it whenever you add, rem
 - [MW_AUDIT.md](./MW_AUDIT.md) — audit of this LiftLog fork as the Mission Winning base: layout of
   `app/` and `backend/`, whether logging works with no server, how the AI planner is wired, and
   the Android release and Expo web build results.
+- [PLAY_RELEASE.md](./PLAY_RELEASE.md) — Android upload keystore from the environment or Gradle
+  properties, the `bundleRelease` AAB, and how to put that bundle on Play internal testing.
 
 ## Running it yourself
 
