@@ -151,14 +151,27 @@ Backup__SinkOptions__Region: ap-southeast-2
 
 ### AI planner
 
-Bring your own Anthropic API key. This calls a paid API on your own account.
+The app still talks to `/ai-chat-v2`. The server calls an OpenAI-compatible chat API. Keys stay in the server environment; the app never sees them.
+
+Try providers in this order. A provider is skipped until its variable is set. If a call fails, the next configured provider is used.
+
+| Order | Provider | Required variable | Default model |
+| --- | --- | --- | --- |
+| 1 | LiteLLM (any OpenAI-compatible base URL) | `LITELLM_BASE_URL` | `gpt-oss-120b` |
+| 2 | Groq | `GROQ_API_KEY` | `openai/gpt-oss-120b` |
+| 3 | OpenRouter | `OPENROUTER_API_KEY` | `meta-llama/llama-3.3-70b-instruct:free` |
 
 ```yaml
-AiPlanner__AnthropicApiKey: sk-ant-...
+LITELLM_BASE_URL: http://litellm:4000/v1
+LITELLM_API_KEY: local-proxy-key
+GROQ_API_KEY: gsk-...
+OPENROUTER_API_KEY: sk-or-...
 Auth__ApiKey__Value: some-long-random-key
 ```
 
-`AiPlanner__AnthropicModelId` overrides the model, defaulting to `claude-sonnet-4-6`.
+`LITELLM_MODEL`, `GROQ_MODEL`, and `OPENROUTER_MODEL` override the model ids. `LITELLM_API_KEY` is optional when the proxy does not check one. The same values can be set as `AiPlanner__LiteLlm__BaseUrl`, `AiPlanner__Groq__ApiKey`, and `AiPlanner__OpenRouter__ApiKey`.
+
+The coach plans the next session from the history the app attaches to the message. When that history shows 7 or more days since the last session, the server multiplies every proposed load by 0.9 and says so in the plan description.
 
 ## Using Postgres instead
 
@@ -217,8 +230,10 @@ Configuration uses standard ASP.NET Core binding, so any `Section:Key` from the
 | `Auth__ForwardAuth__UserHeader`     | none                | Proxy header holding the username.            |
 | `Auth__ForwardAuth__TrustedProxies` | none                | CIDRs the identity header is accepted from.   |
 | `Backup__Sink`                      | none                | `File` or `S3`.                               |
-| `AiPlanner__AnthropicApiKey`        | none                | Anthropic key the planner calls with.         |
-| `AiPlanner__AnthropicModelId`       | `claude-sonnet-4-6` | Overrides the model.                          |
+| `LITELLM_BASE_URL`                  | none                | OpenAI-compatible base URL, tried first.      |
+| `LITELLM_API_KEY`                   | none                | Optional bearer token for that base URL.      |
+| `GROQ_API_KEY`                      | none                | Groq key. Used when LiteLLM is unset or fails. |
+| `OPENROUTER_API_KEY`                | none                | OpenRouter key. Last fallback, `:free` model. |
 
 The container listens on port `8080`, runs as a non-root user, and uses `/var/lib/liftlog` as its
 data directory. Health check: `GET /health`.

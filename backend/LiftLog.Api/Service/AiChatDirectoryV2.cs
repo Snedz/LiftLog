@@ -1,31 +1,26 @@
 using System.Collections.Concurrent;
 using AutomaticInterface;
+using LiftLog.Api.Service.Coach;
 
 namespace LiftLog.Api.Service;
 
 [GenerateAutomaticInterface]
 public class AiChatDirectoryV2(
-    IAnthropicMessageStreamer streamer,
-    AiPlanToolProvider toolProvider,
+    ICoachChatClient chatClient,
     IConfiguration configuration,
     ILoggerFactory loggerFactory
 ) : IAiChatDirectoryV2
 {
     private readonly ConcurrentDictionary<string, IAiChatPlannerV2> chatSessions = new();
 
-    private readonly string modelId =
-        configuration.GetValue<string?>(AiPlannerConfiguration.AnthropicModelIdPath)
-        ?? "claude-sonnet-4-6";
-
     public IAiChatPlannerV2 GetChat(string connectionId)
     {
         return chatSessions.GetOrAdd(
             connectionId,
-            _ => new AnthropicChatPlannerV2(
-                streamer,
-                toolProvider.Tool,
-                modelId,
-                loggerFactory.CreateLogger<AnthropicChatPlannerV2>()
+            _ => new SessionCoachPlanner(
+                chatClient,
+                CoachProviderCatalog.FromConfiguration(configuration),
+                loggerFactory.CreateLogger<SessionCoachPlanner>()
             )
         );
     }

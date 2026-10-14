@@ -55,6 +55,9 @@ builder.Services.AddHostedService<ConfigurationLogger>();
 builder.AddBackupSink();
 builder.Services.AddAnthropicWorkoutPlanner();
 builder.Services.AddAnthropicWorkoutPlannerV2();
+builder.Services.AddSingleton<LiftLog.Api.Service.Coach.ICoachChatClient>(
+    _ => new LiftLog.Api.Service.Coach.OpenAiCompatibleChatClient(new HttpClientHandler())
+);
 
 builder
     .Services.AddControllers()
