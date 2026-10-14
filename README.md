@@ -1,4 +1,6 @@
-# LiftLog
+# Mission Winning
+
+Mission Winning is a fork of [LiftLog](https://github.com/LiamMorrow/LiftLog) by Liam Morrow and contributors. Both are licensed under the GNU Affero General Public License v3. See `NOTICE`.
 
 <p align="center">
   <img width="250" src="./assets/AppScreens-LiftLog-1782275372989.render/apple/English (en-US)/iPhones 6.9/01.png" alt="App home page screenshot">
@@ -16,8 +18,8 @@
 
 ## 🚀 Overview
 
-**LiftLog** is an intuitive, cross-platform gym weight tracking app built with React Native and Expo. Everything you log is stored locally on your device, no sign up required.
-LiftLog also supports privacy focused, end to end encrypted, social feeds to track your workouts with your friends.
+**Mission Winning** is an intuitive, cross-platform gym weight tracking app built with React Native and Expo. Everything you log is stored locally on your device, no sign up required.
+It also supports privacy focused, end to end encrypted, social feeds to track your workouts with your friends. The training log is the LiftLog codebase, kept under the same AGPL licence.
 
 ### Key Features
 

@@ -31,7 +31,7 @@ export default function ScreenshotCollectionPage() {
   useMountEffect(() => {
     dispatch(setWelcomeWizardCompleted(true));
     dispatch(setLastSeenWhatsNewId(whatsNewEntries.at(-1)!.id));
-    dispatch(setColorSchemeSeed('#005500'));
+    dispatch(setColorSchemeSeed('#27B07D'));
     dispatch(setRestNotifications(false));
   });
   switch (type) {

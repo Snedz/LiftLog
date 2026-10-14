@@ -110,7 +110,17 @@ function CustomBall(props: { active: boolean; color: HexColor | undefined; onPre
   );
 }
 
-const PRESET_SEEDS = ['#550000', '#005500', '#000055', '#AA00AA', '#00AAAA', '#AAAA00', '#FFC0CB', '#7f3f00'] as const;
+const PRESET_SEEDS = [
+  '#27B07D',
+  '#550000',
+  '#005500',
+  '#000055',
+  '#AA00AA',
+  '#00AAAA',
+  '#AAAA00',
+  '#FFC0CB',
+  '#7f3f00',
+] as const;
 
 export default function ThemeChooser(props: ThemeChooserProps) {
   const { t } = useTranslate();
