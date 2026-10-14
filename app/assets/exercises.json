@@ -3792,6 +3792,26 @@
       "category": "strength"
     },
     {
+      "name": "Kettlebell Halo",
+      "force": null,
+      "level": "beginner",
+      "mechanic": "compound",
+      "equipment": "kettlebells",
+      "primaryMuscles": ["shoulders"],
+      "secondaryMuscles": ["traps", "middle back", "abdominals", "triceps"],
+      "category": "strength"
+    },
+    {
+      "name": "Kettlebell Halo with Overhead Extension",
+      "force": "push",
+      "level": "intermediate",
+      "mechanic": "compound",
+      "equipment": "kettlebells",
+      "primaryMuscles": ["shoulders", "triceps"],
+      "secondaryMuscles": ["traps", "middle back", "abdominals"],
+      "category": "strength"
+    },
+    {
       "name": "Kettlebell Hang Clean",
       "force": "pull",
       "level": "intermediate",
@@ -3809,6 +3829,16 @@
       "equipment": "kettlebells",
       "primaryMuscles": ["hamstrings"],
       "secondaryMuscles": ["glutes", "lower back"],
+      "category": "strength"
+    },
+    {
+      "name": "Kettlebell Overhead Triceps Extension",
+      "force": "push",
+      "level": "beginner",
+      "mechanic": "isolation",
+      "equipment": "kettlebells",
+      "primaryMuscles": ["triceps"],
+      "secondaryMuscles": ["shoulders", "abdominals"],
       "category": "strength"
     },
     {

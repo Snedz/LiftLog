@@ -1,4 +1,5 @@
 import ItemTitle from '@/components/presentation/foundation/item-title';
+import { ExerciseIllustration } from '@/components/presentation/exercise-illustration';
 import { spacing } from '@/hooks/useAppTheme';
 import { RecordedExercise, RecordedWeightedExercise } from '@/models/session-models';
 import { ReactNode, useState } from 'react';
@@ -146,6 +147,7 @@ export default function ExerciseSection<T extends RecordedExercise>(props: Exerc
           />
           {interactiveButtons}
         </View>
+        <ExerciseIllustration name={recordedExercise.blueprint.name} />
         {props.children}
         <ExerciseNotesDisplay exercise={props.recordedExercise} previousExercise={props.previousLineageExercise} />
       </View>

@@ -26,6 +26,7 @@ import ExerciseMuscleSelector from '@/components/presentation/workout-editor/exe
 import ExerciseFilterer from '@/components/presentation/workout-editor/exercise-filterer';
 import { LegendList } from '@legendapp/list';
 import { ExerciseDescriptor } from '@/models/exercise-models';
+import { ExerciseIllustration } from '@/components/presentation/exercise-illustration';
 import { translateExerciseMeta } from '@/utils/exercise-meta';
 import { HeaderHeightContext } from 'expo-router/react-navigation';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -245,6 +246,7 @@ function ExerciseEditSheet({ exercise, exerciseId }: { exercise: ExerciseDescrip
         gap: spacing[2],
       }}
     >
+      <ExerciseIllustration name={exerciseId} />
       <TextInput
         label={t('exercise.name.label')}
         value={exercise.name}

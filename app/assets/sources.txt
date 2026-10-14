@@ -1,4 +1,6 @@
-https://github.com/wrkout/exercises.json
+https://github.com/yuhonas/free-exercise-db (Unlicense) at f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5
+Illustrations, where the exercise name matches: https://github.com/bryllim/workout-guide (MIT package; artwork CC BY-SA 4.0) at aac599224bb9780305239607ef98540b7e0ce389
+Earlier catalog revisions also drew on https://github.com/wrkout/exercises.json
 
 Exercise translations (assets/exercises/<locale>.json), built with scripts/build-exercise-locales.mjs:
 ru: https://github.com/M1ST0R/ru_exercises.json
